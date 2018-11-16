@@ -27,10 +27,10 @@ var retweets = [];
 
 const TwitterServer = require("./TwitterServer.js");
 const tw = new TwitterServer({
-  consumer_key: "ek37JiOXXWa9dNqlX1ArpSVNA",
-  consumer_secret: "3ikQ1HvuReS0mn4MxIQkNDeKrAwfrnNJYGa0VK82CFbkgCQHDI",
-  access_token_key: "126043085-KIjCgL6bUR5kmmH33XOEunnnpqGU41NL0zJRjino",
-  access_token_secret: "7eWMg3U0LWMfb5pz25GJTQuPNetvmTAkrhLkd2ejEXwAy "
+  consumer_key: "",
+  consumer_secret: "",
+  access_token_key: "",
+  access_token_secret: ""
 });
 
 // now let's get our timeline from the new twitter server
