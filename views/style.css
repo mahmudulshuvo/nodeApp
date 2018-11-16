@@ -1,0 +1,22 @@
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: navy;
+  margin-left: 20px;
+  text-align: center;
+}
+
+.first-col {
+  text-align: center;
+}
+
+.header {
+  text-align: center;
+  background: red;
+}
+
+.container-fluid {
+  background-color: red;
+}

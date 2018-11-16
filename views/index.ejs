@@ -2,13 +2,118 @@
 <html lang="en">
   <head>
     <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" src="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <!-- Optional theme -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+
   </head>
+
   <body>
-    <h1><%= title %></h1>
-    <ul>
-      <% data.forEach((data) => {%>
-      <li><%= data.name %></li>
-      <% }) %>
-    </ul>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark mr-auto">
+        <a class="navbar-brand" href="#">Twitter-App</a>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/settings">Settings <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+      </nav>
+    <div class="container-fluid m-3">
+
+      <div class="row"> 
+
+        <div class="col-md-4">
+          <h1>Make School</h1>
+          <div class="first-col">
+              <% for(var i=0; i<makeschoolTweets.length; i++) { %>
+                  <div class="card mb-2">
+                      <div class="card-header"><%= makeschoolTime[i] %></div>
+                      <div class="card-body">
+                        <span><%= makeschoolTweets[i].text %></span> <br />
+                        <a
+                          href="https://twitter.com/statuses/<%= makeschoolTweets[i].id_str %>"
+                          class="card-link mt-3"
+                          >Tweet link</a
+                        >
+                        <button type="button" class="btn btn-sm btn-primary m-3" data-toggle="popover" title="User Mentions" data-content="<%=makeschoolUserMentions[i] %>"> Mentions</button>
+                      </div>
+                    </div>
+              <% } %>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <h1>Y Combinator</h1>
+          <div class="second-col">
+              <% for(var i=0; i<yCombinatorTweets.length; i++) { %>
+                  <div class="card mb-2">
+                      <div class="card-header"><%= yCombinatorTime[i] %></div>
+                      <div class="card-body">
+                        <span><%= yCombinatorTweets[i].text %></span> <br />
+                        <a
+                          href="https://twitter.com/statuses/<%= yCombinatorTweets[i].id_str %>"
+                          class="card-link"
+                          >Tweet link</a
+                        >
+                        <button type="button" class="btn btn-sm btn-primary m-3" data-toggle="popover" title="User Mentions" data-content="<%=yCombinatorUserMentions[i] %>"> Mentions</button>
+                      </div>
+                    </div>
+              <% } %>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <h1>News Y Combinator</h1>
+          <div class="Third-col">
+              <% for(var i=0; i<newsYCombinatorTweets.length; i++) { %>
+                  <div class="card mb-2">
+                      <div class="card-header"><%= newsYCombinatorTime[i] %></div>
+                      <div class="card-body">
+                        <span><%= newsYCombinatorTweets[i].text %></span> <br />
+                        <a
+                          href="https://twitter.com/statuses/<%= newsYCombinatorTweets[i].id_str %>"
+                          class="card-link"
+                          >Tweet link</a
+                        >
+                        <button type="button" class="btn btn-sm btn-primary m-3" data-toggle="popover" title="User Mentions" data-content="<%=newsYCombinatorUserMentions[i] %>"> Mentions</button>
+                      </div>
+                    </div>
+              <% } %>
+          </div>
+        </div>
+
+
+        <script>
+            $(document).ready(function(){
+                $('[data-toggle="popover"]').popover();   
+            });
+        </script>
+        
+      </div>
+    </div>
+
   </body>
 </html>
+
